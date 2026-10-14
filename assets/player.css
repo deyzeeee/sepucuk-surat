@@ -1,0 +1,15 @@
+/* Sepucuk music player: additional styles only */
+.record{transform:rotate(0deg);animation:sepucuk-spin 4.2s linear infinite;animation-play-state:paused;will-change:transform}
+.record.is-playing{animation-play-state:running}
+@keyframes sepucuk-spin{to{transform:rotate(360deg)}}
+.music-controls{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:12px 0 6px}
+.music-toggle{background:var(--accent);border:0;border-radius:99px;color:white;min-height:38px;padding:8px 15px;font-weight:600;font-size:12px}
+.music-toggle:disabled{opacity:.5;cursor:wait}
+.music-timeline{display:flex;align-items:center;gap:8px;flex:1 1 155px;min-width:0}
+.music-seek{width:100%;min-width:40px;accent-color:var(--accent);cursor:pointer}
+.music-time{font-variant-numeric:tabular-nums;font-size:10px;white-space:nowrap;color:var(--muted)}
+.music-status{margin:6px 0 0;font-size:11px;line-height:1.4;color:var(--muted)}
+.music-toggle:focus-visible,.music-seek:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:520px){.music-controls{align-items:flex-start}.music-timeline{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.record,.record.is-playing{animation:none!important}}
+@media print{.music-controls,.music-status{display:none!important}}
